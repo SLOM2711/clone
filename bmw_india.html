@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore BMW latest Model in India & Book Test Drive | BMW.in</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'BMW Helvetica', 'Helvetica Neue', Arial, sans-serif;
+            color: #262626;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f2557 0%, #1a4d8f 100%);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1920px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: url('https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=60&h=60&fit=crop') center/cover;
+            border-radius: 50%;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu li a:hover {
+            color: #f39c12;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-icon,
+        .user-icon,
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-icon:hover,
+        .user-icon:hover,
+        .menu-icon:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            background: linear-gradient(135deg, #2c1654 0%, #5e2c7e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&h=1080&fit=crop') center/cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 16px;
+            letter-spacing: 3px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content .tagline {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #f39c12;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-button:hover {
+            background: #f39c12;
+            color: #1c1c1c;
+        }
+
+        .find-section {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .find-section h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: #262626;
+        }
+
+        .action-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .action-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .action-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            margin-bottom: 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .action-card h3 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: #262626;
+        }
+
+        .action-button {
+            display: inline-block;
+            padding: 15px 60px;
+            border: 2px solid #16a085;
+            background: transparent;
+            color: #16a085;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .action-button:hover {
+            background: #16a085;
+            color: #fff;
+        }
+
+        .banner-section {
+            width: 100%;
+            padding: 80px 20px;
+            background: #fef5e7;
+        }
+
+        .banner-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=500&fit=crop') center/cover;
+            border-radius: 8px;
+        }
+
+        .banner-content {
+            padding: 40px;
+        }
+
+        .banner-content .subtitle {
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .banner-content h2 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #262626;
+            line-height: 1.2;
+        }
+
+        .banner-content .tagline {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 35px;
+            color: #262626;
+        }
+
+        .banner-button {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #d35400;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .banner-button:hover {
+            background: #e67e22;
+        }
+
+        .offers-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .offers-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .offers-image {
+            width: 100%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=1200&h=400&fit=crop') center/cover;
+        }
+
+        .offers-content {
+            padding: 40px;
+        }
+
+        .offers-content h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #262626;
+        }
+
+        .offers-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .offers-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #d35400;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .offers-link:hover {
+            gap: 15px;
+        }
+
+        .offers-link::after {
+            content: '→';
+            font-size: 20px;
+        }
+
+        .newsletter-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 50px;
+            background: #e8f8f5;
+            border-radius: 8px;
+        }
+
+        .newsletter-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .bmw-icon {
+            width: 60px;
+            height: 60px;
+            background: url('https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=60&h=60&fit=crop') center/cover;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .newsletter-text {
+            flex-grow: 1;
+            font-size: 18px;
+            color: #262626;
+            font-weight: 400;
+        }
+
+        .signup-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .signup-button:hover {
+            background: linear-gradient(135deg, #1abc9c 0%, #2ecc71 100%);
+        }
+
+        .signup-button::after {
+            content: '→';
+            font-size: 20px;
+        }
+
+        .accordion-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .accordion-item:hover {
+            background: #fafafa;
+            padding-left: 20px;
+        }
+
+        .accordion-item h3 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #262626;
+        }
+
+        .accordion-icon {
+            font-size: 32px;
+            color: #262626;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item:hover .accordion-icon {
+            transform: translateX(10px);
+        }
+
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background: #f4ecf7;
+            padding: 60px 20px 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #262626;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #8e44ad;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #8e44ad;
+        }
+
+        .call-button {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(22, 160, 133, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .call-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(22, 160, 133, 0.6);
+        }
+
+        .call-icon {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .banner-container {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-image {
+                order: -1;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content .tagline {
+                font-size: 20px;
+            }
+
+            .find-section h2 {
+                font-size: 32px;
+            }
+
+            .banner-content h2 {
+                font-size: 36px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo"></div>
+            <ul class="nav-menu">
+                <li><a href="#">All Models</a></li>
+                <li><a href="#">Electric</a></li>
+                <li><a href="#">Shop Online</a></li>
+                <li><a href="#">More BMW</a></li>
+            </ul>
+            <div class="header-icons">
+                <div class="search-icon"></div>
+                <div class="user-icon"></div>
+                <div class="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="subtitle">50 YEARS OF</div>
+            <h1>COMFORTING</h1>
+            <div class="tagline">THRILL SEEKERS.</div>
+            <a href="#" class="hero-button">Discover Now</a>
+        </div>
+    </section>
+
+    <section class="find-section">
+        <h2>Find your BMW.</h2>
+        <div class="action-cards">
+            <div class="action-card">
+                <div class="action-icon">🚗</div>
+                <h3>Find a new car.</h3>
+                <a href="#" class="action-button">Search Now</a>
+            </div>
+            <div class="action-card">
+                <div class="action-icon">🔍</div>
+                <h3>Book a test drive.</h3>
+                <a href="#" class="action-button">Request a Test Drive</a>
+            </div>
+            <div class="action-card">
+                <div class="action-icon">⚙️</div>
+                <h3>Build your own.</h3>
+                <a href="#" class="action-button">Configure & Price</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-section">
+        <div class="banner-container">
+            <div class="banner-image"></div>
+            <div class="banner-content">
+                <div class="subtitle">THE NEW</div>
+                <h2>2</h2>
+                <div class="tagline">LEAVE BORING BEHIND.</div>
+                <a href="#" class="banner-button">Skip Boring</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-section" style="background: #fff;">
+        <div class="banner-container">
+            <div class="banner-content">
+                <div class="subtitle">LUXURY. FAST. FORWARD.</div>
+                <h2>THE BMW 7 RANGE.</h2>
+                <a href="#" class="banner-button">Discover Now</a>
+            </div>
+            <div class="banner-image" style="background: url('https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&h=500&fit=crop') center/cover;"></div>
+        </div>
+    </section>
+
+    <section class="banner-section">
+        <div class="banner-container">
+            <div class="banner-image" style="background: url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=500&fit=crop') center/cover;"></div>
+            <div class="banner-content">
+                <div class="subtitle">THE ALL-NEW</div>
+                <h2>X3</h2>
+                <div class="tagline">MASTER EVERY MOMENT.</div>
+                <a href="#" class="banner-button">Discover Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-section" style="background: #fff;">
+        <div class="banner-container">
+            <div class="banner-content">
+                <div class="subtitle">THE</div>
+                <h2>iX1</h2>
+                <div class="tagline">LONG WHEELBASE</div>
+                <p style="font-size: 18px; color: #666; margin-bottom: 30px;">DOMINATE EVERYDAY. YOUR WAY.</p>
+                <a href="#" class="banner-button">Discover Now</a>
+            </div>
+            <div class="banner-image" style="background: url('https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=500&fit=crop') center/cover;"></div>
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <div class="offers-card">
+            <div class="offers-image"></div>
+            <div class="offers-content">
+                <h2>BMW Special Offers.</h2>
+                <p>Monthly EMI starting from Rs.32,222*/Month. Check Out similar BMW finance offers available across the BMW range.</p>
+                <a href="#" class="offers-link">Topic link</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <div class="bmw-icon"></div>
+            <div class="newsletter-text">Stay up to date with the latest news from BMW</div>
+            <a href="#" class="signup-button">Sign up</a>
+        </div>
+    </section>
+
+    <section class="accordion-section">
+        <div class="accordion-item">
+            <h3>Contact & Info</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+        <div class="accordion-item">
+            <h3>Experience BMW</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+        <div class="accordion-item">
+            <h3>Assistance & Services</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+        <div class="accordion-item">
+            <h3>Choose & Buy</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+        <div class="accordion-item">
+            <h3>Models</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+        <div class="accordion-item">
+            <h3>BMW Electric Cars</h3>
+            <span class="accordion-icon">›</span>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="social-icon">f</div>
+        <div class="social-icon">ig</div>
+        <div class="social-icon">yt</div>
+        <div class="social-icon">in</div>
+        <div class="social-icon">𝕏</div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Contact & Info</h4>
+                <ul>
+                    <li><a href="#">Customer support</a></li>
+                    <li><a href="#">Online Genius (FAQ)</a></li>
+                    <li><a href="#">Accident Support</a></li>
+                    <li><a href="#">Request for Offer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Experience BMW</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">BMW careers</a></li>
+                    <li><a href="#">BMW.com</a></li>
+                    <li><a href="#">BMW Group</a></li>
+                    <li><a href="#">BMW Chennai Plant</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Assistance & Services</h4>
+                <ul>
+                    <li><a href="#">Book a Service Appointment</a></li>
+                    <li><a href="#">MY BMW App</a></li>
+                    <li><a href="#">Connected Drive</a></li>
+                    <li><a href="#">Warranties</a></li>
+                    <li><a href="#">Remote Software Upgrades</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Choose & Buy</h4>
+                <ul>
+                    <li><a href="#">Build your Own</a></li>
+                    <li><a href="#">New Cars Search</a></li>
+                    <li><a href="#">BMW Financial Services</a></li>
+                    <li><a href="#">Finance & Leasing</a></li>
+                    <li><a href="#">BMW Offers</a></li>
+                    <li><a href="#">Book a Test Drive</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Models</h4>
+                <ul>
+                    <li><a href="#">BMW X series</a></li>
+                    <li><a href="#">BMW 7 series</a></li>
+                    <li><a href="#">BMW 5 series</a></li>
+                    <li><a href="#">BMW 3 series</a></li>
+                    <li><a href="#">BMW 2 series</a></li>
+                    <li><a href="#">BMW M series</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>BMW Electric Cars</h4>
+                <ul>
+                    <li><a href="#">BMW Electric Vehicles</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © BMW AG 2025</p>
+            <div class="footer-links">
+                <a href="#">Legal Disclaimer/Imprint</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="call-button">
+        <div class="call-icon"></div>
+    </div>
+</body>
+</html>
